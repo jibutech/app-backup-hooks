@@ -38,7 +38,7 @@
       community.kubernetes.k8s_exec:
         namespace: wordpress
         pod: "{{ pod_name }}"
-        command: mysql -u root -p${MYSQL_ROOT_PASSWORD} -D wordpress -e "update wp_options set option_value='https://blog.jibudata.com:30165' where option_name = 'siteurl'"
+        command: mysql -u root -ppassw0rd -D wordpress -e "update wp_options set option_value='https://blog.jibudata.com:30165' where option_name = 'siteurl'"
       register: command_status
       ignore_errors: True
 
@@ -51,7 +51,7 @@
       community.kubernetes.k8s_exec:
         namespace: wordpress
         pod: "{{ pod_name }}"
-        command: mysql -u root -p${MYSQL_ROOT_PASSWORD} -D wordpress -e "update wp_options set option_value='https://blog.jibudata.com:30165' where option_name = 'home'"
+        command: mysql -u root -ppassw0rd -D wordpress -e "update wp_options set option_value='https://blog.jibudata.com:30165' where option_name = 'home'"
       register: command_status
       ignore_errors: True
 
